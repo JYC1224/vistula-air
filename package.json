@@ -1,0 +1,19 @@
+{
+  "name": "phaser-learning-game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Phaser 4 game-based learning project",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "phaser": "4.2.1"
+  },
+  "devDependencies": {
+    "vite": "8.3.5"
+  }
+}
