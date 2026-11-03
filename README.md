@@ -2,6 +2,8 @@
 
 以現代華沙蕭邦機場 WAW 為基地的航空公司經營與自主學習遊戲。網站根路徑直接進入營運中心，玩家研究機型、規劃航線、購租機隊、安排保養，主動推進營運日並完成董事會委託。
 
+[直接遊玩 Vistula Air](https://jyc1224.github.io/vistula-air/)
+
 入口流程：`index.html → src/main.js → GameUI + Phaser（BootScene → PreloadScene → GameScene）`。
 
 ## 首版可玩內容
@@ -30,6 +32,10 @@ npm run dev
 開啟開發伺服器顯示的網址後，可先看左下角「工作手冊」。第一份委託在右側：比較需求與機型，確認開航，再按「下一營運日」查看結果。達成旅客、天數、載客率與獲利條件即可完成委託。
 
 快捷鍵：`1`–`5` 切換工作區、`Space` 推進營運日、`Esc` 關閉視窗。設定視窗可重新開始公司。進度儲存在瀏覽器的目前網站來源，重新整理可繼續。
+
+## GitHub Pages 部署
+
+推送到 `main` 後，GitHub Actions 會安裝套件、執行測試、建置遊戲並自動發布至 GitHub Pages。部署建置會依照 repository 名稱設定網址路徑；本機開發仍使用根路徑。不同瀏覽器、裝置或網址各自保存遊戲進度。
 
 ## 程式架構
 
@@ -82,7 +88,7 @@ assets-source/
 
 ## 放入與載入素材
 
-供遊戲實際使用的檔案放在 `public/assets/`。Vite 會將 `public/` 的內容保留路徑複製到建置結果，因此 `public/assets/images/sprites/player.png` 的遊戲網址是 `/assets/images/sprites/player.png`。
+供遊戲實際使用的檔案放在 `public/assets/`。Vite 會將 `public/` 的內容保留路徑複製到建置結果；本機開發時，`public/assets/images/sprites/player.png` 的遊戲網址是 `/assets/images/sprites/player.png`，部署到 GitHub Pages 時則會加上 repository 路徑。
 
 在 `PreloadScene.preload()` 中載入，例如：
 
